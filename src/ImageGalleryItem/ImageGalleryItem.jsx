@@ -1,10 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ImageGalleryItem = (props) => {
+const ImageGalleryItem = ({ src, id, openModal, openLarge, srcLarge }) => {
   return (
-    <li className="ImageGalleryItem-image">
-      <img src="" alt="" />
+    <li id={id} className="ImageGalleryItem-image">
+      <img
+        onClick={() => {
+          openModal();
+          openLarge(srcLarge);
+        }}
+        src={src}
+        alt=""
+      />
     </li>
   );
 };

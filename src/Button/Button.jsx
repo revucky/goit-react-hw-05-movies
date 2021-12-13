@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Button = (props) => {
+const Button = ({ onClick }) => {
   return (
     <div>
-      <button type="button">Load more...</button>
+      <button onClick={onClick} type="button">
+        Load more...
+      </button>
     </div>
   );
 };

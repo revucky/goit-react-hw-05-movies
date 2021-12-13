@@ -1,10 +1,25 @@
 import ImageGalleryItem from "../ImageGalleryItem/ImageGalleryItem";
 import s from "./ImageGallery.module.css";
 
-export const ImageGallery = (img) => {
+import React from "react";
+import PropTypes from "prop-types";
+
+const ImageGallery = ({ img, modalO, largeUrl }) => {
   return (
     <ul className={s.ImageGallery}>
-      <ImageGalleryItem />
+      {img.map(({ webformatURL, id, largeImageURL }) => (
+        <ImageGalleryItem
+          openLarge={largeUrl}
+          openModal={modalO}
+          key={id}
+          src={webformatURL}
+          srcLarge={largeImageURL}
+        />
+      ))}
     </ul>
   );
 };
+
+ImageGallery.propTypes = {};
+
+export default ImageGallery;
