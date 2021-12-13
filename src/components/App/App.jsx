@@ -17,12 +17,14 @@ export default class App extends Component {
     page: 1,
     isModal: false,
     largeImage: "",
+    isLoad: false,
   };
 
   componentDidMount() {}
   componentDidUpdate(prevProps, prevState) {
     const { page, q } = this.state;
     if (prevState.q !== q || prevState.page !== page) {
+      this.setState({ isLoad: true });
       fetch(
         `${BASE_URL}?q=${q}&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`
       )
@@ -32,6 +34,7 @@ export default class App extends Component {
             images: [...prevState.images, ...hits],
           }))
         );
+      this.setState({ isLoad: false });
     }
   }
 
@@ -61,7 +64,7 @@ export default class App extends Component {
   };
 
   render() {
-    const { q, images, isModal, largeImage } = this.state;
+    const { isLoad, images, isModal, largeImage, page } = this.state;
     const {
       handleFormSubmit,
       handleEsc,
@@ -73,6 +76,15 @@ export default class App extends Component {
     return (
       <>
         <Searchbar submit={handleFormSubmit} />
+        {isLoad && (
+          <Loader
+            type="ThreeDots"
+            color="#00BFFF"
+            height={80}
+            width={80}
+            timeout={3000}
+          />
+        )}
         {images.length > 0 && (
           <ImageGallery
             largeUrl={openLargeImg}
@@ -80,14 +92,9 @@ export default class App extends Component {
             img={images}
           />
         )}
-        <Loader
-          type="ThreeDots"
-          color="#00BFFF"
-          height={80}
-          width={80}
-          timeout={1500}
-        />
+
         {images.length > 0 && <Button onClick={handleClick} />}
+        {isLoad && page !== 1 && <Loader />}
         {isModal && (
           <Modal
             src={largeImage}
