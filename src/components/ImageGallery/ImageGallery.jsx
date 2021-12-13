@@ -20,6 +20,8 @@ const ImageGallery = ({ img, modalO, largeUrl }) => {
   );
 };
 
-ImageGallery.propTypes = {};
+ImageGallery.propTypes = {
+  img: PropTypes.array,
+};
 
 export default ImageGallery;

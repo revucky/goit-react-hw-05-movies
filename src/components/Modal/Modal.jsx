@@ -1,4 +1,5 @@
 import React from "react";
+import s from "./Modal.module.css";
 
 export class Modal extends React.Component {
   componentDidMount() {
@@ -11,8 +12,8 @@ export class Modal extends React.Component {
   render() {
     const { src } = this.props;
     return (
-      <div className="Overlay">
-        <div className="Modal">
+      <div className={s.Overlay}>
+        <div className={s.Modal}>
           <img src={src} alt="" />
         </div>
       </div>

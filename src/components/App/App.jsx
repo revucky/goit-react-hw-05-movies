@@ -1,8 +1,8 @@
-import Searchbar from "../../Searchbar/Searchbar";
+import Searchbar from "../Searchbar/Searchbar";
 import { Component } from "react";
-import ImageGallery from "../../ImageGallery/ImageGallery";
-import Button from "../../Button/Button";
-import { Modal } from "../../Modal/Modal";
+import ImageGallery from "../ImageGallery/ImageGallery";
+import Button from "../Button/Button";
+import { Modal } from "../Modal/Modal";
 import Loader from "react-loader-spinner";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
