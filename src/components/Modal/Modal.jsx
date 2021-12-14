@@ -12,7 +12,7 @@ export class Modal extends React.Component {
   render() {
     const { src } = this.props;
     return (
-      <div className={s.Overlay}>
+      <div className={s.Overlay} onClick={this.props.backDrop}>
         <div className={s.Modal}>
           <img src={src} alt="" />
         </div>

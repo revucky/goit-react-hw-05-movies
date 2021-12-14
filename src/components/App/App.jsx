@@ -4,8 +4,10 @@ import ImageGallery from "../ImageGallery/ImageGallery";
 import Button from "../Button/Button";
 import { Modal } from "../Modal/Modal";
 import Loader from "react-loader-spinner";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import "./App.css";
 
 const API_KEY = "24480734-3d80cd0fb88d3e4535c800802";
 const BASE_URL = `https://pixabay.com/api/`;
@@ -23,6 +25,7 @@ export default class App extends Component {
   componentDidMount() {}
   componentDidUpdate(prevProps, prevState) {
     const { page, q } = this.state;
+
     if (prevState.q !== q || prevState.page !== page) {
       this.setState({ isLoad: true });
       fetch(
@@ -33,8 +36,10 @@ export default class App extends Component {
           this.setState((prevState) => ({
             images: [...prevState.images, ...hits],
           }))
-        );
-      this.setState({ isLoad: false });
+        )
+        .finally(() => {
+          return this.setState({ isLoad: false });
+        });
     }
   }
 
@@ -59,6 +64,11 @@ export default class App extends Component {
       this.onModalClose();
     }
   };
+  handleBackdrop = (e) => {
+    if (e.target === e.currentTarget) {
+      this.onModalClose();
+    }
+  };
   onModalClose = (e) => {
     this.setState({ isModal: false });
   };
@@ -72,17 +82,19 @@ export default class App extends Component {
       handleClick,
       onModalOpen,
       openLargeImg,
+      handleBackdrop,
     } = this;
     return (
       <>
         <Searchbar submit={handleFormSubmit} />
         {isLoad && (
           <Loader
+            className="App-header"
             type="ThreeDots"
-            color="#00BFFF"
+            color="#3f51b5"
             height={80}
             width={80}
-            timeout={3000}
+            timeout={1500}
           />
         )}
         {images.length > 0 && (
@@ -100,6 +112,7 @@ export default class App extends Component {
             src={largeImage}
             handleEscape={handleEsc}
             onClick={onModalClose}
+            backDrop={handleBackdrop}
           />
         )}
 
