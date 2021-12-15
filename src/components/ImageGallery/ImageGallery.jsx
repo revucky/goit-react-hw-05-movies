@@ -2,7 +2,7 @@ import ImageGalleryItem from "../ImageGalleryItem/ImageGalleryItem";
 import s from "./ImageGallery.module.css";
 
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 const ImageGallery = ({ img, modalO, largeUrl }) => {
   return (
@@ -20,8 +20,8 @@ const ImageGallery = ({ img, modalO, largeUrl }) => {
   );
 };
 
-ImageGallery.propTypes = {
-  img: PropTypes.array,
-};
+// ImageGallery.propTypes = {
+//   img: PropTypes.array,
+// };
 
 export default ImageGallery;
