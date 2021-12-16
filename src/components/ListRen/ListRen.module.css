@@ -1,0 +1,15 @@
+.list {
+  list-style: none;
+}
+.item {
+  margin-bottom: 10px;
+}
+.link {
+  text-decoration: none;
+  color: rgb(253, 142, 142);
+  font-size: 20px;
+  font-weight: 500;
+}
+.link:hover {
+  color: greenyellow;
+}

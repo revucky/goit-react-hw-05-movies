@@ -1,0 +1,17 @@
+.title {
+  display: inline-block;
+  color: #000;
+  /* margin-right: 20px; */
+  margin-left: 40px;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 500;
+}
+.activeLink {
+  composes: title;
+  color: pink;
+}
+.nav {
+  background-image: url(./making-video.svg);
+  background-repeat: no-repeat;
+}
