@@ -7,6 +7,11 @@
   font-size: 25px;
   font-weight: 500;
 }
+.title:hover {
+  transition: all 0.3s cubic-bezier(0, 0, 1, 1);
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+  color: pink;
+}
 .activeLink {
   composes: title;
   color: pink;

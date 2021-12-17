@@ -3,13 +3,26 @@
 }
 .item {
   margin-bottom: 10px;
+  padding: 10px;
+  width: 500px;
+}
+.item:hover {
+  background-color: white;
+  transition: all 0.3s cubic-bezier(0, 0, 1, 1);
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 .link {
   text-decoration: none;
   color: rgb(253, 142, 142);
   font-size: 20px;
   font-weight: 500;
+  font-family: Ubuntu, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.03em;
 }
 .link:hover {
-  color: greenyellow;
+  color: purple;
+  transition: all 500 cubic-bezier(0, 0, 1, 1);
 }

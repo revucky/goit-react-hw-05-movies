@@ -9,8 +9,8 @@ const ListRen = ({ movies }) => {
         <ul className={s.list}>
           {movies.map((movie) => (
             <li key={movie.id} className={s.item}>
-              <Link to={`/movie/${movie.id}`} className={s.link}>
-                {movie.title}
+              <Link to={`/movies/${movie.id}`} className={s.link}>
+                {movie.title || movie.name}
               </Link>
             </li>
           ))}

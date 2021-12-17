@@ -1,3 +1,6 @@
+import { toast } from "react-toastify";
+
 export default function NotFoundView() {
-  return <p> 404! Page not found! </p>;
+  const notify = () => toast.error("404");
+  return <div onLoad={notify}> 404! Page not found! </div>;
 }

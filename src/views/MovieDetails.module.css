@@ -1,0 +1,54 @@
+.wrap {
+  background: #ededed;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 19px;
+  overflow: hidden;
+  display: flex;
+  margin-top: 15px;
+  border: none;
+}
+.title {
+  font-family: Ubuntu;
+  font-weight: bold;
+  font-size: 30.0514px;
+  line-height: 35px;
+  letter-spacing: 0.02em;
+  /* box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25); */
+  padding-left: 10px;
+}
+.allTitleWrap {
+  margin-left: 20px;
+}
+.subtitle {
+  font-family: Ubuntu;
+  width: 460px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: -0.03em;
+  color: #2e3d45;
+}
+.titleUp {
+  font-family: Ubuntu;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 115.4%;
+  /* or 32px */
+  letter-spacing: -0.03em;
+  color: #2e3d45;
+}
+.link {
+  text-decoration: none;
+  color: rgb(253, 142, 142);
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Ubuntu, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.03em;
+}
+.link:hover {
+  color: purple;
+  transition: all 500 cubic-bezier(0, 0, 1, 1);
+}

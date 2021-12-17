@@ -24,3 +24,19 @@ export async function fetchMovieId(movieId) {
   if (!response.ok) throw new Error("Not found");
   return await response.json();
 }
+
+export async function fetchCastId(movieId) {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}`
+  );
+  if (!response.ok) throw new Error("Not found");
+  return await response.json();
+}
+
+export async function fetchReview(movieId) {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${API_KEY}`
+  );
+  if (!response.ok) throw new Error("Not found");
+  return await response.json();
+}
