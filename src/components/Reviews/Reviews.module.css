@@ -1,0 +1,15 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  padding-left: 0;
+  list-style: none;
+}
+.name {
+  font-size: 20px;
+  color: pink;
+}
+.text {
+  font-family: Ubuntu sans-serif;
+  /* width: 300px; */
+}

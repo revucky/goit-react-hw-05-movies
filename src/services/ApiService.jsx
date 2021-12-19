@@ -9,7 +9,7 @@ export async function fetchWithError() {
     : Promise.reject(new Error("Not found"));
 }
 
-export async function getMovies(query) {
+export async function getMoviesSearch(query) {
   const response = await fetch(
     `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language-en-US&page=1&query=${query}`
   );
