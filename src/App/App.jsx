@@ -28,7 +28,6 @@ export default function App() {
             <Route path="/" exact>
               <Homepage />
             </Route>
-
             <Route exact path="/movies">
               <MoviesPage />
             </Route>

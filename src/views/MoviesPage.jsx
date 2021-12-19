@@ -11,13 +11,13 @@ const STORAGE_KEY = "movies";
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState([]);
-  const [queryS, setQueryS] = useState(storage.get(STORAGE_KEY) ?? "");
-  const [searchName, setSearchName] = useState("");
+  const [queryS, setQueryS] = useState("");
+  const [searchName, setSearchName] = useState(storage.get(STORAGE_KEY) ?? "");
   // const [error, setError] = useState("");
   // const history = useHistory();
   useEffect(() => {
-    storage.save(STORAGE_KEY, queryS);
-  }, [queryS]);
+    storage.save(STORAGE_KEY, searchName);
+  }, [searchName]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,12 +36,11 @@ export default function MoviesPage() {
         const movies = await getMoviesSearch(searchName);
         setMovies([...movies.results]);
       } catch (e) {
-        // toast("Here you can find movies");
+        toast("Here you can find movies");
       } finally {
         <Loader />;
       }
     };
-
     getMovie();
   }, [searchName]);
 
